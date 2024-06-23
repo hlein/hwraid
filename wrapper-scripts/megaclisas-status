@@ -533,7 +533,7 @@ def returnDiskInfo(output, controllerid):
             if model != "Unknown":
                 dbgprint("Disk Info: " + str(arrayid) + " " + str(diskid) + " " + str(oldenclid))
                 if subfstate == "Rebuild":
-                    cmd = "%s pdrbld -showprog -physdrv\[%s:%s\] -a%d -NoLog" % (megaclipath, enclid, slotid, controllerid)
+                    cmd = "%s pdrbld -showprog -physdrv\\[%s:%s\\] -a%d -NoLog" % (megaclipath, enclid, slotid, controllerid)
                     output = getOutput(cmd)
                     percent = returnRebuildProgress(output)
                     fstate = str("Rebuilding (%d%%)" % (percent))
